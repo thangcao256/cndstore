@@ -1,0 +1,30 @@
+﻿@model List<CDNSTORES.Models.CDNSTORES.Product>
+@{
+    ViewBag.Title = "SearchByName";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model.Count > 0)
+{
+    <h5>Số sản phẩm tìm được khớp với từ khóa @ViewBag.key là :@Model.Count </h5>
+        <div class="home-product">
+            <div class="row sm-gutter">
+    @foreach (var item in Model)
+    {
+                <div class="col l-2-4 m-4 c-6">
+                    <div class="home-product-item">
+                        <img src="~/@Html.DisplayFor(modelItem => item.Images.Picture1)" class="home-product-item__img" style="width:100px;" alt="Ảnh sản phẩm" />
+                        <h4 class="home-product-item__name_2 home-product-item__name_2_price">@Html.DisplayFor(modelItem => item.Status.Name)</h4>
+                        <h4 class="home-product-item__name_2">@Html.DisplayFor(modelItem => item.Price.Money)</h4>
+                        <h4 class="home-product-item__name_1">@Html.DisplayFor(modelItem => item.Name)</h4>
+                        <h4 class="home-product-item__name_2" style="color:black;">@Html.ActionLink("Xem chi tiết", "Details", "Products", new { id = item.Id }, null)</h4>
+                    </div>
+                </div>
+    }
+            </div>
+        </div>
+}
+else
+{
+    <h2>Không có sản phẩm nào phù hợp với từ khóa @ViewBag.key </h2>
+}

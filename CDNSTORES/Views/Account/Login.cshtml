@@ -1,0 +1,78 @@
+﻿@using CDNSTORES.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+}
+<hr class="thanh-ngang" />
+<div class="banner-bootom-w3-agileits">
+    <div class="row sm-gutter details-container">
+        <!-- tittle heading -->
+        <h3 class="tittle-w3l">
+            <span class="heading-style">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </h3>
+        <!-- //tittle heading -->
+        <div class="col-md-12 single-right-left bia-dangky">
+            <div class="dang-ky" style=" border: 1px solid; margin-bottom: 20px; border-radius: 5px; text-align: center;">
+                <section id="loginForm">
+                    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <h3 style="font-weight:bolder">ĐĂNG NHẬP</h3>
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Email, "Email: ", new { @class = "col-md-5 control-label" })
+                            <div class="col-md-7">
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Email, " ", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Password, "Mật khẩu: ",new { @class = "col-md-5 control-label" })
+                            <div class="col-md-7">
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Password, " ", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="checkbox col-md-6" style="text-align:right;">
+                                    @Html.CheckBoxFor(m => m.RememberMe)
+                                </div>
+                                <div class="checkbox col-md-6" style="text-align:left;">
+                                    Ghi nhớ đăng nhập?
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <input type="submit" value="Đăng nhập" class="btn btn-default" />
+                            </div>
+                        </div>
+                        <br />
+                        <p>
+                            @Html.ActionLink("Đăng ký tài khoản mới?", "Register")
+                        </p>
+                        @* Enable this once you have account confirmation enabled for password reset functionality
+                <p>
+                    @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                </p>*@
+                    }
+                </section>
+            </div>
+            <img src="~/Content/images/bg_comingsoon.jpg" alt="" class="bia-dangky" style="width: 100%; border-radius: 5px; " />
+        </div>
+
+
+
+    </div>
+</div>
+<hr />
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

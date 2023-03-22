@@ -1,0 +1,72 @@
+﻿@model IEnumerable<CDNSTORES.Models.CDNSTORES.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<img src="~/Content/images/desktop_productlist.jpg" alt="" class="desktop_productlist" />
+
+
+<div class="home-product">
+    <div class="row sm-gutter">
+
+
+        @foreach (var item in Model)
+        {
+
+            <div class="col l-2-4 m-4 c-6">
+                <div class="home-product-item">
+                    <img src="/@Html.DisplayFor(modelItem=>item.Images.Picture1)" class="home-product-item__img" style="width:100%;" />
+                    <h4 class="home-product-item__name_2 home-product-item__name_2_price">@Html.DisplayFor(modelItem => item.Status.Name)</h4>
+                    <h4 class="home-product-item__name_2">@Html.DisplayFor(modelItem => item.Price.Money)</h4>
+                    <h4 class="home-product-item__name_1">@Html.DisplayFor(modelItem => item.Name)</h4>
+                    <h4 class="home-product-item__name_2" style="color:black;">@Html.ActionLink("Xem chi tiết", "Details", "Products", new { id = item.Id }, null)</h4>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+
+<ul class="pagination home-product__pagination">
+    <li class="pagination-item">
+        <a href="" class="pagination-item__link">
+            <i class="pagination-item__icon fas fa-angle-left"></i>
+        </a>
+    </li>
+    <li class="pagination-item pagination-item--active">
+        <a href="" class="pagination-item__link">1</a>
+    </li>
+    <li class="pagination-item">
+        <a href="" class="pagination-item__link">2</a>
+    </li>
+    <li class="pagination-item">
+        <a href="" class="pagination-item__link">3</a>
+    </li>
+    <li class="pagination-item">
+        <a href="" class="pagination-item__link">4</a>
+    </li>
+    <li class="pagination-item">
+        <a href="" class="pagination-item__link">5</a>
+    </li>
+    <li class="pagination-item">
+        <a href="" class="pagination-item__link">...</a>
+    </li>
+    <li class="pagination-item">
+        <a href="" class="pagination-item__link">14</a>
+    </li>
+    <li class="pagination-item">
+        <a href="" class="pagination-item__link">
+            <i class="pagination-item__icon fas fa-angle-right"></i>
+        </a>
+    </li>
+</ul>
+<script>
+    $('#btnSearch').on('click', function () {
+        //lay gia tri cua textbox
+        var giatrinhap = $('#txtInput').val();
+        //cho trinh duyet truy cap
+        window.location.href = "/Products/SearchByName?name=" + giatrinhap;
+    });
+</script>

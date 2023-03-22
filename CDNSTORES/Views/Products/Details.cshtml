@@ -1,0 +1,157 @@
+﻿@model CDNSTORES.Models.CDNSTORES.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<hr class="thanh-ngang" />
+<div class="banner-bootom-w3-agileits">
+    <div class="row sm-gutter details-container">
+        <!-- tittle heading -->
+        <h3 class="tittle-w3l">
+            <span class="heading-style">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </h3>
+        <!-- //tittle heading -->
+        <div class="col-md-7 single-right-left ">
+            <div class="grid images_3_of_2">
+                <div class="flexslider">
+                    <ul class="slides" style="z-index: 1;">
+                        <li data-thumb="~/@Html.DisplayFor(model => model.Images.Picture1)">
+                            <div class="thumb-image">
+                                <img src="~/@Html.DisplayFor(model => model.Images.Picture1)" class="detail-product-img1">
+                            </div>
+                        </li>
+                        <li data-thumb="~/@Html.DisplayFor(model => model.Images.Picture2)">
+                            <div class="thumb-image">
+                                <img src="~/@Html.DisplayFor(model => model.Images.Picture2)" class="detail-product-img2">
+                            </div>
+                        </li>
+                        <li data-thumb="~/@Html.DisplayFor(model => model.Images.Picture3)">
+                            <div class="thumb-image">
+                                <img src="~/@Html.DisplayFor(model => model.Images.Picture3)" class="detail-product-img3">
+                            </div>
+                        </li>
+                        <li data-thumb="~/@Html.DisplayFor(model => model.Images.Picture4)">
+                            <div class="thumb-image">
+                                <img src="~/@Html.DisplayFor(model => model.Images.Picture4)" class="detail-product-img2">
+                            </div>
+                        </li>
+                        <li data-thumb="~/@Html.DisplayFor(model => model.Images.Picture5)">
+                            <div class="thumb-image">
+                                <img src="~/@Html.DisplayFor(model => model.Images.Picture5)" class="detail-product-img3">
+                            </div>
+                        </li>
+                        <li data-thumb="~/@Html.DisplayFor(model => model.Images.Picture6)">
+                            <div class="thumb-image">
+                                <img src="~/@Html.DisplayFor(model => model.Images.Picture6)" class="detail-product-img2">
+                            </div>
+                        </li>
+                        <li data-thumb="~/@Html.DisplayFor(model => model.Images.Picture7)">
+                            <div class="thumb-image">
+                                <img src="~/@Html.DisplayFor(model => model.Images.Picture7)" class="detail-product-img3">
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 single-right-left simpleCart_shelfItem">
+            <h4 class="detail-product-name">  @Html.DisplayFor(model => model.Name) </h4>
+            <div class="detail-product-info">
+                <div class="detail-product-info-id">
+                    Mã sản phẩm:<strong> @Html.DisplayFor(model => model.Id)</strong>
+                </div>
+                <div class="detail-product-info-status">
+                    Tình trạng: <strong> @Html.DisplayFor(model => model.Status.Name)</strong>
+                </div>
+            </div>
+            <div class="detail-product-price">
+                @Html.DisplayFor(model => model.Price.Money) VNĐ
+            </div>
+            <div class="detail-dathang">
+                <div class="hand-left">
+                    
+                </div>
+                <div class="detail-order">
+                    @Html.ActionLink("Đặt hàng ngay", "Create", "Orders")
+                </div>
+                <div class="hand-right">
+                   
+                </div>
+            </div>
+            <hr style="border: 1px dashed black;" />
+
+            <h4 class="detail-product-name">THÔNG TIN SẢN PHẨM</h4>
+            <p class="detail-product-info4">Gender: Unisex</p>
+            <p class="detail-product-info4">Size run: 35 – 46</p>
+            <p class="detail-product-info4">Upper: Canvas NE</p>
+            <p class="detail-product-info4">Gender: Unisex</p>
+            <hr style="border: 1px dashed black;" />
+
+            <p class="detail-product-info4" style="font-size:32px;margin:10px 0;">SIZE CHARE</p>
+            <img src="~/Content/assets/img/Size-chart-1.jpg" alt="" class="img-size-char" />
+            <hr style="border: 1px dashed black;" />
+
+            <h4 class="detail-product-name">QUY ĐỊNH ĐỔI TRẢ</h4>
+            <ul>
+                <li>Chỉ đổi hàng 1 lần duy nhất, mong bạn cân nhắc kĩ trước khi quyết định.</li>
+                <li>Thời hạn đổi sản phẩm khi mua trực tiếp tại cửa hàng là 07 ngày, kể từ ngày mua. Đổi sản phẩm khi mua online là 14 ngày, kể từ ngày nhận hàng.</li>
+                <li>Sản phẩm đổi phải kèm hóa đơn. Bắt buộc phải còn nguyên tem, hộp, nhãn mác.</li>
+                <li>Sản phẩm đổi không có dấu hiệu đã qua sử dụng, không giặt tẩy, bám bẩn, biến dạng.</li>
+                <li>Trong trường hợp sản phẩm - size bạn muốn đổi không còn hàng trong hệ thống. Vui lòng chọn sản phẩm khác.</li>
+                <li>Không hoàn trả bằng tiền mặt dù bất cứ trong trường hợp nào. Mong bạn thông cảm.</li>
+            </ul>
+        </div>
+        
+    </div>
+</div>
+<hr />
+
+@section Scripts {
+    @Scripts.Render("~/bundles/shop_detail")
+    <script>
+        // Can also be used with $(document).ready()
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                controlNav: "thumbnails"
+            });
+        });
+    </script>
+    <script>
+        $(window).load(function () {
+            $("#flexiselDemo1").flexisel({
+                visibleItems: 3,
+                animationSpeed: 1000,
+                autoPlay: true,
+                autoPlaySpeed: 3000,
+                pauseOnHover: true,
+                enableResponsiveBreakpoints: true,
+                responsiveBreakpoints: {
+                    portrait: {
+                        changePoint: 480,
+                        visibleItems: 1
+                    },
+                    landscape: {
+                        changePoint: 640,
+                        visibleItems: 2
+                    },
+                    tablet: {
+                        changePoint: 768,
+                        visibleItems: 2
+                    }
+                }
+            });
+
+        });
+    </script>
+
+}
+
+

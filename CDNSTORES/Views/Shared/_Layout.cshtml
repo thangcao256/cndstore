@@ -1,0 +1,432 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="~/Content/images/running.png" />
+    <title>CDNSTORE</title>
+    @*@Styles.Render("~/Content/shop_css")*@
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link rel="stylesheet" href="~/Content/assets/css/base.css">
+        <link rel="stylesheet" href="~/Content/css/main.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">*@
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"> <!--reset để hủy bỏ CSS mặc định của trình duyệt-->
+    <link rel="stylesheet" href="~/Content/assets/css/base.css">
+    <link rel="stylesheet" href="~/Content/assets/css/main.css">
+    <link rel="stylesheet" href="~/Content/assets/css/grid.css">
+    <link rel="stylesheet" href="~/Content/assets/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"> <!--áp dụng font chữ Roboto-->
+    <link rel="stylesheet" href="~/Content/assets/fonts/fontawesome-free-5.15.2/css/all.min.css">
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <a id="button"></a>
+    <div class="app">
+        <header class="header">
+            <div class="grid wide">
+
+                <!-- Navbar -->
+                <nav class="header__navbar hide-on-mobile-tablet">
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-item-has-qr header__navbar-item--separate">
+                            Cửa hàng CDN STORES
+                            <div class="header__qr">
+                                <img src="~/Content/assets/img/qrcode.png" alt="QR CODE" class="header__qr-img">
+                                <div class="header__qr-apps">
+                                    <a href="" class="header__qr-link">
+                                        <img src="~/Content/assets/img/chplay.png" alt="Google Play" class="header__qr-dowload-img">
+                                    </a>
+                                    <a href="" class="header__qr-link">
+                                        <img src="~/Content/assets/img/appstore.png" alt="App Store" class="header__qr-dowload-img">
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="header__navbar-item">
+                            <span class="header__navbar-title--no-pointer">CDN STORE</span>
+                            <a href="https://www.facebook.com/" class="header__narbar-icon-link">
+                                <i class="header__navbar-icon fab fa-facebook"></i>
+                            </a>
+                            <a href="https://www.instagram.com/" class="header__narbar-icon-link">
+                                <i class="header__navbar-icon fab fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="header__navbar-list">
+
+                        @Html.Partial("_LoginPartial")
+                    </ul>
+                </nav>
+
+
+                <!-- Header with search -->
+                <div class="header-with-search hide-on-mobile">
+
+                    <!-- label not lable :) -->
+                    <label for="mobile-search-checkbox" class="header__mobile-search hide-on-pc">
+                        <i class="header__mobile-search-icon fas fa-search"></i>
+                    </label>
+
+                    <input type="checkbox" hidden id="mobile-search-checkbox" class="header__search-checkbox">
+
+                    <div class="header__logo">
+                        <a href="/" class="header__logo-link">
+                            <img src="~/Content/images/MyLogo.jpg" alt="" class="header__img">
+                        </a>
+                    </div>
+
+
+                    <div class="header__search">
+                        <div class="header__search-input-wrap">
+                            <input type="text" class="header__search-input" placeholder="Nhập để tìm kiếm mặt hàng" id="txtInput">
+                            
+                            <!-- Search history -->
+                            @*<div class="header__search-history">
+            <h3 class="header__search-heading">Lịch sử tìm kiếm</h3>
+            <ul class="header__search-history-list">
+                <li class="header__search-history-item">
+                    <a href="">
+                        SH 125i 2021
+                    </a>
+                </li>
+                <li class="header__search-history-item">
+                    <a href="">
+                        Honda vision 2021
+                    </a>
+                </li>
+                <li class="header__search-history-item">
+                    <a href="">
+                        Sonic 150R 2020
+                    </a>
+                </li>
+            </ul>
+        </div>*@
+                        </div>
+                        @*<div class="header__search-select">
+                            <span class="header__search-select-lable">Trong cửa hàng</span>
+                            <i class="header__search-select-icon fas fa-angle-down"></i>
+                            <ul class="header__search-option">
+                                <li class="header__search-option-item header__search-option-item--active">
+                                    <span>Trong cửa hàng</span>
+                                    <i class="fas fa-check"></i>
+                                </li>
+                                <li class="header__search-option-item">
+                                    <span>Ngoài cửa hàng</span>
+                                    <i class="fas fa-check"></i>
+                                </li>
+                            </ul>
+                        </div>*@
+
+                        <button class="header__search-btn" id="btnSearch">
+                            <i class="header__search-btn-icon fas fa-search"></i>
+                        </button>
+                    </div>
+                </header>
+    </div>
+    <marquee direction="right" class="chay-chu">
+        CDN STORE - Địa chỉ: 475A Điện Biên Phủ, Phường 25, Quận Bình Thạnh, Thành phố Hồ Chí Minh - Số điện thoại: 0967960031 - Fanpage: facebook.com/cndstore.vietnam
+    </marquee>
+    <div class="app__container">
+        <div class="grid wide">
+            <ul class="header__sort-bar">
+                <li class="header__sort-item">
+                    <a href="/Products/Index" class="header__sort-link">Liên quan</a>
+                </li>
+                <li class="header__sort-item header__sort-item--active">
+                    <a href="/Products/StatusProduct/6" class="header__sort-link">Mới nhất</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="/Products/StatusProduct/5" class="header__sort-link">Bán chạy</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Giá</a>
+                </li>
+            </ul>
+            <div class="row app__content">
+                <div class="col l-2 c-0 m-2">
+                    <nav class="category hide-on-mobile">
+                        <h3 class="category__heading" style="font-weight:bolder;text-align:center">
+                            <!-- <i class="category__heading-icon fas fa-list"></i> -->
+                            Lọc
+                        </h3>
+                        <ul class="category-list">
+                            <li class="category-item">
+                                @*category-item--active*@
+                                <a href="/Products/Index" class="category-item__link" style="font-weight:bolder;text-align:center;font-size:18px;">Trạng thái</a>
+                            </li>
+                            <li class="category-item" style="text-align:center">
+                                <a href="/Products/StatusProduct/6" class="category-item__link">Mẫu mới</a>@*6*@
+                            </li>
+                            <li class="category-item" style="text-align:center">
+                                <a href="/Products/StatusProduct/1" class="category-item__link">Giới hạn</a>@*1*@
+                            </li>
+                            <li class="category-item" style="text-align:center">
+                                <a href="/Products/StatusProduct/3" class="category-item__link">Giảm giá</a>@*3*@
+                            </li>
+                            <li class="category-item" style="text-align:center">
+                                <a href="/Products/StatusProduct/4" class="category-item__link">Đặt trước</a>@*4*@
+                            </li>
+                            <li class="category-item" style="text-align:center">
+                                <a href="/Products/StatusProduct/5" class="category-item__link">Bán chạy</a>@*5*@
+                            </li>
+                            <li class="category-item">
+                                <a href="/Products/Index" class="category-item__link" style="font-weight:bolder;text-align:center;font-size:18px;">Chất liệu</a>
+                            </li>
+                            <li class="category-item" style="text-align:center">
+                                <a href="/Products/Material/1" class="category-item__link">Canvas | Vải</a>
+                            </li>
+                            <li class="category-item" style="text-align:center">
+                                <a href="/Products/Material/2" class="category-item__link">Da lộn</a>
+                            </li>
+                            <li class="category-item" style="text-align:center">
+                                <a href="/Products/Material/5" class="category-item__link">Cotton</a>
+                            </li>
+                            <li class="category-item">
+                                <a href="/Products/Index" class="category-item__link" style="font-weight:bolder;text-align:center;font-size:18px;">Màu sắc</a>
+                            </li>
+                            <li class="category-item" style="text-align:center">
+                                <a href="/Products/Color/1" class="category-item__link">Đen</a>
+                            </li>
+                            <li class="category-item" style="text-align:center">
+                                <a href="/Products/Color/2" class="category-item__link">Trắng</a>
+                            </li>
+                            <li class="category-item" style="text-align:center">
+                                <a href="/Products/Color/4" class="category-item__link">Vàng</a>
+                            </li>
+                            <li class="category-item" style="text-align:center">
+                                <a href="/Products/Color/7" class="category-item__link">Lục</a>
+                            </li>
+                            <li class="category-item" style="text-align:center">
+                                <a href="/Products/Color/8" class="category-item__link">Lam</a>
+                            </li>
+                            <li class="category-item" style="text-align:center">
+                                <a href="/Products/Color/9" class="category-item__link">Kem</a>
+                            </li>
+                            <li class="category-item" style="text-align:center">
+                                <a href="/Products/Color/6" class="category-item__link">Hồng</a>
+                            </li>
+                            <li class="category-item">
+                                <a href="#" class="category-item__link" style="font-weight:bolder;text-align:center;font-size:18px;">Giá</a>
+                            </li>
+                            <li class="category-item" style="text-align:center">
+                                <a href="/Products/Price/2" class="category-item__link">3XXk</a>
+                            </li>
+                            <li class="category-item" style="text-align:center">
+                                <a href="/Products/Price/4" class="category-item__link">4XXk</a>
+                            </li>
+                            <li class="category-item" style="text-align:center">
+                                <a href="/Products/Price/6" class="category-item__link">5XXk</a>
+                            </li>
+                            <li class="category-item" style="text-align:center">
+                                <a href="/Products/Price/8" class="category-item__link">6XXk</a>
+                            </li>
+                            <li class="category-item" style="text-align:center">
+                                <a href="/Products/Price/10" class="category-item__link">7XXk</a>
+                            </li>
+                            <li class="category-item" style="text-align:center">
+                                <a href="/Products/Price/12" class="category-item__link">8XXk</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="grid__column-10">
+
+                    <div class="home-filter hide-on-mobile-tablet">
+                        <span class="home-filter__lable">Sắp xếp theo</span>
+                        <a href="/Products/Index" home-filter__btn btn">Phổ biến</a>
+                        <a href="/Products/StatusProduct/6" class="home-filter__btn btn btn--primary">Mới nhất</a>
+                        <a href="/Products/StatusProduct/5" class="home-filter__btn btn">Bán chạy</a>
+                        <div class="select-input">
+                            <span class="select-input__lable">
+                                Giá
+                            </span>
+                            <i class="select-input__icon fas fa-angle-down"></i>
+
+                            <!-- List option -->
+                            <ul class="select-input__list">
+                                <li class="select-input__item">
+                                    <a href="/Products/SortDes" class="select-input__link">Cao đến thấp</a>
+                                </li>
+                                <li class="select-input__item">
+                                    <a href="/Products/Sort" class="select-input__link">Thấp đến cao</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="home-filter__page">
+                            <span class="home-filter__page-num">
+                                <span class="home-filter__page-current">1</span>/14
+                            </span>
+                            <div class="home-filter__page-control">
+                                <a href="" class="home-filter__page-btn home-filter__page-btn--disabled">
+                                    <i class="home-filter__page-icon fas fa-angle-left"></i>
+                                </a>
+                                <a href="" class="home-filter__page-btn">
+                                    <i class="home-filter__page-icon fas fa-angle-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <nav class="mobile-category">
+                        <ul class="mobile-category__list">
+                            <li class="mobile-category__item">
+                                <a href="" class="mobile-category__link">Sản phẩm</a>
+                            </li>
+                            <li class="mobile-category__item">
+                                <a href="" class="mobile-category__link">Mẫu mới</a>
+                            </li>
+                            <li class="mobile-category__item">
+                                <a href="" class="mobile-category__link">Giảm giá</a>
+                            </li>
+                            @*<li class="mobile-category__item">
+                                <a href="" class="mobile-category__link">Đặt hàng</a>
+                            </li>
+                            <li class="mobile-category__item">
+                                <a href="" class="mobile-category__link">Giới hạn</a>
+                            </li>*@
+                        </ul>
+                    </nav>
+
+                    @RenderBody()
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="grid wide footer__content">
+            <div class="row">
+                <div class="col l-2-4 m-4 c-6">
+                    <h3 class="footer__heading">Sản phẩm</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Mẫu mới</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Sale - off</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Limited Version</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Thời trang & Phụ kiện</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Câu hỏi thường gặp</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="col l-2-4 m-4 c-6">
+                    <h3 class="footer__heading">Công ty</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Tuyển dụng</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Liên hệ nhượng quyền</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Về CDN STORE</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Đánh giá góp ý</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col l-2-4 m-4 c-6">
+                    <h3 class="footer__heading">Hỗ trợ</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">FAQs</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Bảo mật thông tin</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Chính sách chung</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Tra cứu đơn hàng</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col l-2-4 m-4 c-6">
+                    <h3 class="footer__heading">Thông tin liên hệ</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">
+                                <i class="footer-item__icon fab fa-facebook-square"></i>
+                                FACEBOOK
+                            </a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">
+                                <i class="footer-item__icon fab fa-facebook-messenger"></i>
+                                MESSENGER
+                            </a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">
+                                <i class="footer-item__icon fas fa-phone-square"></i>
+                                PHONE
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col l-2-4 m-8 c-12">
+                    <h3 class="footer__heading">Đến cửa hàng bằng Google Map</h3>
+                    <div class="footer__dowload">
+                        <img src="~/Content/assets/img/qrcode.png" alt="Dowload QR" class="footer__dowload-qr">
+                        <div class="footer__dowload-apps">
+                            <a href="" class="footer__dowload-app-link">
+                                <img src="~/Content/assets/img/chplay.png" alt="Google Play" class="footer__dowload-app-img">
+                            </a>
+                            <a href="" class="footer__dowload-app-link">
+                                <img src="~/Content/assets/img/appstore.png" alt="App Store" class="footer__dowload-app-img">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="grid wide">
+                <p class="footer__text"> © 2021 - Bản quyền thuộc về cửa hàng CDN STORES</p>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+<script>
+    var btn = $('#button');
+
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > 300) {
+            btn.addClass('show');
+        } else {
+            btn.removeClass('show');
+        }
+    });
+
+    btn.on('click', function (e) {
+        e.preventDefault();
+        $('html, body').animate({ scrollTop: 0 }, '300');
+    });
+
+
+</script>
+</html>

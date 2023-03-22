@@ -1,0 +1,316 @@
+﻿.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: #000000;
+}
+
+/*@media (min-width: 768px) */
+.navbar-nav > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.navbar-nav > li > a {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    line-height: 20px;
+    font-weight: bolder;
+    color: white;
+}
+
+
+.home-product-item__img {
+    width: 100%;
+}
+.home-product-item__name_2_price,
+.home-product-item > h4 > a {
+    color:red !important;
+    text-decoration: none;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+    a:hover, a:focus{
+    color: #000;
+    text-decoration: none;
+}
+
+
+/*    Gotop-----------------------------------------------------------------------------------
+
+*/
+#button {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 80px;
+    right: 40px;
+    transition: background-color .3s, opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+    background-color: black;
+}
+
+    #button::after {
+        content: "⬆";
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 2em;
+        line-height: 50px;
+        color: #fff;
+    }
+
+    #button:hover {
+        cursor: pointer;
+        background-color: #333;
+    }
+
+    #button:active {
+        background-color: #555;
+    }
+
+    #button.show {
+        opacity: 1;
+        visibility: visible;
+    }
+/*
+    Đầu trangs-----------------------------------------------------------------------------------
+
+*/
+.thanh-ngang {
+    width: 100%;
+    height: 4px;
+    background-color: black;
+    border-radius: 15px;
+}
+.thanh-ngang-content {
+    width: 100%;
+    background-color: black;
+    border-radius: 15px;
+    border: dotted 1px;
+}
+.desktop_productlist {
+    width: 100%;
+    border-radius: 10px
+}
+
+.chay-chu {
+    margin-top: 5px;
+    font-size: 14px;
+    font-style:italic;
+}
+
+.category-item-1 {
+    padding: 0px 20px;
+}
+
+.banner {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+/*
+        TRang details-----------------------------------------------------------------------------------
+                        */
+/*.details-container {
+    margin-top: 15px;
+}
+
+.details {
+    background: red;
+    width: 100%;
+    height: 1000px;
+}
+
+.details-image1 {
+    width: 90%;
+    margin-top: 10px;
+}*/
+/*
+    Css Move - details-----------------------------------------------------------------------------------
+*/
+.slides > li {
+    list-style-type: none;
+}
+
+.detail-product-name {
+    font-size: 30px;
+    margin: 0 0 10px;
+    font-weight: bolder;
+    text-align: center;
+    border: 1px solid black;
+    margin: 30px 0;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.detail-product-info {
+    font-size: 18px;
+    width: 100%;
+    height: 10px;
+}
+
+.detail-product-info-id,
+.detail-product-info-status {
+    float: left;
+    display: block;
+    width: 50%;
+    text-align: center;
+    margin: 20px 0px;
+}
+.detail-product-price {
+    text-align: center;
+    width: 100%;
+    font-size: 27px;
+    font-weight: bolder;
+    color: red;
+    margin-bottom: 15px;
+}
+
+.detail-product-info4 {
+    margin: 4px;
+    text-align: center;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bolder;
+}
+.img-size-char {
+    width: 100%;
+}
+
+.detail-product-img1 {
+    width: 100%;
+    display: block;
+    float: left;
+    padding: 5px;
+    transition: transform 1s;
+}
+.detail-product-img2 {
+    width: 50%;
+    display: block;
+    float: left;
+    padding: 5px;
+    transition: transform 1s;
+}
+.detail-product-img3 {
+    width: 50%;
+    display: block;
+    float: right;
+    padding: 5px;
+    transition: transform 1s;
+
+}
+
+/*.detail-product-img1:hover,
+.detail-product-img2:hover,
+.detail-product-img3:hover {
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+}*/
+
+.detail-dathang {
+    width: 100%;
+    text-align: center;
+}
+
+.detail-order {
+    display: inline-block;
+    margin: 0 auto;
+    background-color: #a09c9c;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.hand-left {
+    float: left;
+    width: 25%;
+}
+
+.hand-right {
+    width: 25%;
+    float: right;
+}
+/*Đăng ký---------------------------------------------------------------------------------------------------
+
+*/
+.bia-dangky {
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    overflow: hidden;
+    margin-right: 0px;
+}
+
+.dang-ky {
+    border: 1px solid;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/*
+    Trang đặt hàng và địa chỉ-----------------------------------------------------------------------------
+
+*/
+.border-table {
+    text-align: center;
+}
+
+.table-th {
+    text-align: center;
+}
+
+.table-tr {
+    text-align: center;
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border: 1px solid #000;
+}
+
+.about:hover {
+    color: red;
+    transform: translateY(-2px);
+    cursor:pointer;
+}
+
+.desktop_productlist:hover {
+    transform: translateY(5px);
+    cursor: pointer;
+}

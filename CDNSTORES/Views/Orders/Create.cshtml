@@ -1,0 +1,146 @@
+﻿@model CDNSTORES.Models.CDNSTORES.Order
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<hr class="thanh-ngang" />
+<div class="banner-bootom-w3-agileits">
+    <div class="row sm-gutter details-container">
+        <!-- tittle heading -->
+        <h3 class="tittle-w3l">
+            <span class="heading-style">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </h3>
+        <!-- //tittle heading -->
+        <div class="col-md-5 single-right-left ">
+            <img src="~/Content/images/order.jpg" alt="" style="width:100%; margin:10px;" />
+
+        </div>
+        <div class="col-md-7 single-right-left ">
+            <div class="dang-ky" style=" border: 1px solid; margin-bottom: 20px; border-radius: 5px; text-align: center;">
+                <h4 style="font-weight:bolder">ĐẶT HÀNG</h4>
+                <hr />
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CustomerId, "Tên khách hàng: ", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.DropDownList("CustomerId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.CustomerId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ProductId, "Mã sản phẩm: ", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.DropDownList("ProductId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.ProductId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.SizeId, "Size: ", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.DropDownList("SizeId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.SizeId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Number, "Số lượng: ", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.Number, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Number, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.OrderInfoId, "Địa chỉ: ", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.DropDownList("OrderInfoId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.OrderInfoId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <input type="submit" value="Xác nhận" class="btn btn-default" onClick="return confirmSubmit()"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-12" style="font-weight:bolder;font-size:18px;">
+                        @Html.ActionLink("Xem giỏ hàng", "Index", "Orders")
+                    </div>
+                </div>
+            </div>
+                }
+                    
+            </div>
+
+
+        </div>
+        <div class="row sm-gutter details-container">
+            <!-- tittle heading -->
+            <h3 class="tittle-w3l">
+                <span class="heading-style">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </span>
+            </h3>
+            <!-- //tittle heading -->
+            <div class="col-md-5 single-right-left ">
+                <hr style="border: 1px dashed black;" />
+
+                <h4 class="detail-product-name">CHÍNH SÁCH BẢO HÀNH</h4>
+                <ul>
+                    <li style="text-align:justify">
+                        Mỗi đôi giày CDN STORE trước khi xuất xưởng đều trải qua nhiều khâu kiểm tra. Tuy vậy, trong quá trình sử dụng, nếu nhận thấy các lỗi: gãy đế, hở đế, đứt chỉ may,...trong thời gian 3 tháng từ ngày mua hàng, mong bạn sớm gửi sản phẩm về CDN STORE nhằm giúp chúng tôi có cơ hội phục vụ bạn tốt hơn. Vui lòng gửi sản phẩm về bất kỳ cửa hàng CDN STORE nào, hoặc gửi đến trung tâm bảo hành CDN STORE ngay trong trung tâm TP.HCM trong giờ hành chính:
+
+                        Lầu 1, 475A Điện Biên Phủ, Phường 25, Quận Bình Thạnh, TP HCM
+                        Hotline: 0348.938.553
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-7 single-right-left ">
+                <hr style="border: 1px dashed black;" />
+
+                <h4 class="detail-product-name">QUY ĐỊNH ĐỔI TRẢ</h4>
+                <ul>
+                    <li>Chỉ đổi hàng 1 lần duy nhất, mong bạn cân nhắc kĩ trước khi quyết định.</li>
+                    <li>Thời hạn đổi sản phẩm khi mua trực tiếp tại cửa hàng là 07 ngày, kể từ ngày mua. Đổi sản phẩm khi mua online là 14 ngày, kể từ ngày nhận hàng.</li>
+                    <li>Sản phẩm đổi phải kèm hóa đơn. Bắt buộc phải còn nguyên tem, hộp, nhãn mác.</li>
+                    <li>Sản phẩm đổi không có dấu hiệu đã qua sử dụng, không giặt tẩy, bám bẩn, biến dạng.</li>
+                    <li>Trong trường hợp sản phẩm - size bạn muốn đổi không còn hàng trong hệ thống. Vui lòng chọn sản phẩm khác.</li>
+                    <li>Không hoàn trả bằng tiền mặt dù bất cứ trong trường hợp nào. Mong bạn thông cảm.</li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+    <hr />
+
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+
+<script LANGUAGE="JavaScript">
+    function confirmSubmit() {
+        var agree = confirm("Vui lòng kiểm tra đúng MÃ SẢN PHẨM - SỐ LƯỢNG - ĐỊA CHỈ trước khi đặt hàng!");
+        if (agree)
+            return true;
+        else
+            return false;
+    }
+</script>

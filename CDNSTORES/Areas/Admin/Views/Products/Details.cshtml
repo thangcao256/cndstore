@@ -1,0 +1,68 @@
+﻿@model CDNSTORES.Models.CDNSTORES.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Color.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Color.Name)
+        </dd>
+
+        <dt>
+            Hình ảnh:
+        </dt>
+
+        <dd>
+            <img src="@Html.DisplayFor(model => model.Images.Picture1)" alt="Alternate Text" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Material.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Material.Name)
+        </dd>
+
+        <dt>
+            Giá tiền:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price.Money)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+@*@Html.ActionLink("Xem chi tiết", "Details", "Products", new { id = item.Id }, null)*@

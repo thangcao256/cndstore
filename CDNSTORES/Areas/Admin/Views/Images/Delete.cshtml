@@ -1,0 +1,81 @@
+﻿@model CDNSTORES.Models.CDNSTORES.Images
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Images</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Picture1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Picture1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Picture2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Picture2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Picture3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Picture3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Picture4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Picture4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Picture5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Picture5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Picture6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Picture6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Picture7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Picture7)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

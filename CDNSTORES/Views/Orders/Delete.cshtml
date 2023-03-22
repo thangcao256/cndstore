@@ -1,0 +1,86 @@
+﻿@model CDNSTORES.Models.CDNSTORES.Order
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<hr class="thanh-ngang" />
+<div class="banner-bootom-w3-agileits">
+    <div class="row sm-gutter details-container">
+        <!-- tittle heading -->
+        <h3 class="tittle-w3l">
+            <span class="heading-style">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </h3>
+        <!-- //tittle heading -->
+        <div class="col-md-12 single-right-left bia-dangky">
+            <p style="font-weight: bold;text-align: center">
+                CHI TIẾT ĐƠN HÀNG
+            </p>
+            <div class="dang-ky" style=" border: 1px solid; margin-bottom: 20px; border-radius: 5px; text-align: center;">
+
+                <table class="table border-table">
+                    <tr class="table-tr">
+                        <th class="table-th">
+                            Tên khách hàng
+                        </th>
+                        <th class="table-th">
+                            Địa chỉ
+                        </th>
+                        <th class="table-th">
+                            Mã sản phẩm
+                        </th>
+                        <th class="table-th">
+                            Kích cỡ
+                        </th>
+                        <th class="table-th">
+                            Số lượng
+                        </th>
+                        <th class="table-th">
+                            Tuỳ chọn
+                        </th>
+                    </tr>
+
+                    
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => model.Customer.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.OrderInfo.Place)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Product.PriceId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Size.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Number)
+                        </td>
+                        <td>
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+
+                                <div class="form-actions no-color">
+                                    <input type="submit" value="Xoá đơn hàng này" class="btn btn-default" /> |
+                                    @Html.ActionLink("Trở về danh sách", "Index")
+                                </div>
+                            }
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <hr style="border: 1px dashed #000;" />
+            <img src="~/Content/images/bg_comingsoon.jpg" alt="" class="bia-dangky" style="width: 100%; border-radius: 5px; " />
+        </div>
+
+    </div>
+</div>
+<hr />

@@ -1,0 +1,75 @@
+﻿@model IEnumerable<CDNSTORES.Models.CDNSTORES.OrderInfo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<hr class="thanh-ngang" />
+<div class="banner-bootom-w3-agileits">
+    <div class="row sm-gutter details-container">
+        <!-- tittle heading -->
+        <h3 class="tittle-w3l">
+            <span class="heading-style">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </h3>
+        <!-- //tittle heading -->
+        <div class="col-md-12 single-right-left bia-dangky">
+            <p style="font-weight: bold;text-align: center">
+                DANH SÁCH ĐỊA CHỈ
+            </p>
+            <div class="dang-ky" style=" border: 1px solid; margin-bottom: 20px; border-radius: 5px; text-align: center;">
+
+                <table class="table border-table">
+                    <tr class="table-tr">
+                        <th class="table-th">
+                            Tên người nhận
+                        </th>
+                        <th class="table-th">
+                            Số điện thoại
+                        </th>
+                        <th class="table-th">
+                            Địa chỉ
+                        </th>
+                        <th class="table-th">
+                            Tuỳ chọn
+                        </th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Phone)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Place)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.Id }) |
+                                @*@Html.ActionLink("Xoá", "Delete", new { id = item.Id })*@
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+
+            </div>
+
+            <p style="font-weight: bold; text-align: center">
+                @Html.ActionLink("THÊM ĐỊA CHỈ", "Create")
+            </p>
+            <hr style="border: 1px dashed black;" />
+            <img src="~/Content/images/bg_comingsoon.jpg" alt="" class="bia-dangky" style="width: 100%; border-radius: 5px; " />
+        </div>
+
+    </div>
+</div>
+<hr/>
+
